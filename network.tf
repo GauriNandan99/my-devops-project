@@ -26,3 +26,29 @@ module "vpc" {
   ]
   
 }
+
+module "websg" {
+  source = "./modules/sg"
+  vpc_id = module.vpc.id
+  security_group_info = {
+    name        = "web"
+    description = "this opens 80 and 22 port"
+    inbound_rules = [{
+      port        = 22
+      protocol    = "tcp"
+      source      = "0.0.0.0/0"
+      description = "open ssh"
+      }, {
+      port        = 80
+      protocol    = "tcp"
+      source      = "0.0.0.0/0" #this is for demo, when using in production select vpc-cidr/ALB sg or any other appropriate range but not 0.0.0.0/0
+      description = "open http"
+      }, {
+      port        = 443
+      protocol    = "tcp"
+      source      = "0.0.0.0/0" #this is for demo, when using in production select vpc-cidr/ALB sg or any other appropriate range but not 0.0.0.0/0
+      description = "open https"
+    }]
+  }
+
+}
