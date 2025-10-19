@@ -1,7 +1,7 @@
 module "asgwithlb" {
   source = "../.."
   ami_info = {
-    id       = "ami-0360c520857e3138f"
+    id       = "ami-0360c520857e3138f" #ami id of ec2
     username = "ubuntu"
   }
   template_details = {
@@ -15,7 +15,7 @@ module "asgwithlb" {
   scaling_details = {
     min_size   = 1
     max_size   = 2
-    subnet_ids = ["subnet-067813a42fj87bebe", "subnet-04b2162ws48085216"]
+    subnet_ids = ["subnet-067813a42fj87bebe", "subnet-04b2162ws48085216"] #subnet values can be found from output.tf of vpc module
   }
   lb_details = {
     type               = "application"

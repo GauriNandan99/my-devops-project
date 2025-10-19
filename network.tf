@@ -1,6 +1,6 @@
 module "vpc" {
-    source = "./modules/vpc"
-    vpc_info = {
+  source = "./modules/vpc"
+  vpc_info = {
     cidr_block           = "192.160.0.0/16"
     enable_dns_hostnames = true
     tags = {
@@ -24,7 +24,7 @@ module "vpc" {
     }
 
   ]
-  
+
 }
 
 module "websg" {
