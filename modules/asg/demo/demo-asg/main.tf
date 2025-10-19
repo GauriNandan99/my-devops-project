@@ -8,7 +8,7 @@ module "asgwithlb" {
     name                        = "nginx"
     instance_type               = "t2.micro"
     key_name                    = "my_idrsa"
-    script_path                 = "installnginx.sh"
+    #script_path                 = "installnginx.sh"
     security_group_ids          = ["sg-091f82f762a77f070"]
     associate_public_ip_address = true
   }

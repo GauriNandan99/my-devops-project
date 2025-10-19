@@ -11,7 +11,7 @@ variable "template_details" {
     name                        = string
     instance_type               = string
     key_name                    = string
-    script_path                 = string
+    #script_path                 = string
     security_group_ids          = list(string)
     associate_public_ip_address = bool
 

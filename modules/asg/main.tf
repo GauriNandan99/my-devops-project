@@ -4,7 +4,7 @@ resource "aws_launch_template" "base" {
   image_id      = var.ami_info.id
   instance_type = var.template_details.instance_type
   key_name      = var.template_details.key_name
-  user_data     = filebase64(var.template_details.script_path)
+  #user_data     = filebase64(var.template_details.script_path)
   network_interfaces {
     associate_public_ip_address = var.template_details.associate_public_ip_address
     device_index                = "0"
